@@ -10,21 +10,21 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
-        // stage('Build docker image'){
-        //     steps{
-        //         script{
-        //             bat 'docker build -t rockysaini/devops-assignment .'
-        //         }
-        //     }
-        // }
-        // stage('Push image to Hub'){
-        //     steps{
-        //         script{
-        //            bat 'docker login -u rockysaini -p "Docker@9027"'
-        //            bat 'docker push rockysaini/devops-assignment'
-        //         }
-        //     }
-        // }
+        stage('Build docker image'){
+            steps{
+                script{
+                    bat 'docker build -t arnab/devops-assignment .'
+                }
+            }
+        }
+        stage('Push image to Hub'){
+            steps{
+                script{
+                   bat 'docker login -u arnab -p "Arnab@roy.123"'
+                   bat 'docker push arnab/devops-assignment'
+                }
+            }
+        }
     }
     
 }
