@@ -13,15 +13,15 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t arnab/devops-assignment .'
+                    bat 'docker build -t arnab11/Devops-0.0.1-SNAPSHOT .'
                 }
             }
         }
         stage('Push image to Hub'){
             steps{
                 script{
-                   bat 'docker login -u arnab -p "Arnab@roy.123"'
-                   bat 'docker push arnab/devops-assignment'
+                   bat 'docker login -u arnab11 -p "Arnab@roy.123"'
+                   bat 'docker push arnab11/Devops-0.0.1-SNAPSHOT'
                 }
             }
         }
