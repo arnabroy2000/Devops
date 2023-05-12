@@ -7,21 +7,21 @@ pipeline {
         stage('Build Maven'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/arnabroy2000/Devops']]])
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t arnab/Devops-0.0.1-SNAPSHOT .'
+                    sh 'docker build -t arnab/Devops-0.0.1-SNAPSHOT .'
                 }
             }
         }
         stage('Push image to Hub'){
             steps{
                 script{
-                   bat 'docker login -u arnab -p "Arnab@roy.123"'
-                   bat 'docker push arnab/Devops-0.0.1-SNAPSHOT'
+                   sh 'docker login -u arnab -p "Arnab@roy.123"'
+                   sh 'docker push arnab/Devops-0.0.1-SNAPSHOT'
                 }
             }
         }
