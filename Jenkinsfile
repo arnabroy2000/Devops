@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                    bat 'docker login -u arnab -p "Arnab@roy.123"'
-                   bat 'docker push arnab11/Devops-0.0.1-SNAPSHOT'
+                   bat 'docker push arnab/Devops-0.0.1-SNAPSHOT'
                 }
             }
         }
